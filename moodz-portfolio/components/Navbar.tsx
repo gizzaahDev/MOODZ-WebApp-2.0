@@ -32,9 +32,10 @@ interface NavItem {
 interface NavbarProps {
   activeSection: string | null
   scrollToSection: (elementId: string) => void
+  className?: string
 }
 
-export default function Navbar({ activeSection, scrollToSection: propScrollToSection }: NavbarProps) {
+export default function Navbar({ activeSection, scrollToSection, className }: NavbarProps) {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
   const [drawerOpen, setDrawerOpen] = useState(false)
@@ -46,18 +47,18 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
   }
 
   const handleScroll = (elementId: string) => {
-    const element = document.querySelector(elementId);
+    const element = document.querySelector(elementId)
     if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const headerOffset = 80
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
-      });
+      })
     }
-  };
+  }
 
   const navItems: NavItem[] = [
     { text: "Home", href: "#home" },
@@ -94,24 +95,32 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
     <>
       <AppBar
         position="sticky"
+        className={className}
         sx={{
-          bgcolor: (theme) => theme.palette.background.default,
-          color: (theme) => theme.palette.text.primary,
+          bgcolor: theme.palette.background.default,
           boxShadow: 3,
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(10px)",
-          backgroundColor: "rgba(0, 0, 0, 0.6)",
-          transition: "background-color 0.3s, color 0.3s",
+          backdropFilter: "blur(12px) saturate(180%)",
+          WebkitBackdropFilter: "blur(50px) saturate(180%)",
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          transition: "background-color 0.3s, color 0.3s, backdrop-filter 0.3s",
+          borderRadius: "50px",
+          margin: "10px",
+          width: "calc(100% - 20px)",
+          color: "#444", // Default text color
+          "&.dark-text": {
+            color: "#fff", // White text when over dark sections
+          },
           "&.scrolled": {
-            backgroundColor: "rgba(243, 250, 244, 0.5)",
-            color: "#444",
+            backgroundColor: "rgba(255, 255, 255, 0.15)",
+            backdropFilter: "blur(15px) saturate(200%)",
+            WebkitBackdropFilter: "blur(15px) saturate(200%)",
           },
           "&.hero": {
-            backgroundColor: "rgba(243, 250, 244, 0.5)",
-            color: "#444",
+            backgroundColor: "rgba(255, 255, 255, 0.15)",
+            backdropFilter: "blur(10px) saturate(180%)",
+            WebkitBackdropFilter: "blur(10px) saturate(180%)",
           },
         }}
-        className={activeSection !== "#home" ? "scrolled" : "hero"}
       >
         <Toolbar>
           <Typography
@@ -120,9 +129,9 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
             sx={{
               flexGrow: 1,
               fontWeight: "bold",
-              color: "#016a70",
               display: "flex",
               alignItems: "center",
+              transition: "color 0.3s",
             }}
           >
             <motion.div
@@ -135,7 +144,7 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
           </Typography>
 
           {isMobile ? (
-            <IconButton edge="end" color="inherit" aria-label="menu" onClick={toggleDrawer}>
+            <IconButton edge="end" aria-label="menu" onClick={toggleDrawer} sx={{ color: "inherit" }}>
               <MenuIcon />
             </IconButton>
           ) : (
@@ -148,7 +157,6 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
                         color="inherit"
                         onClick={(e) => {
                           item.setAnchor && item.setAnchor(e.currentTarget)
-                          // Don't navigate for project scope and downloads
                           if (item.href !== "#project-scope" && item.href !== "#downloads") {
                             handleScroll(item.href)
                           }
@@ -156,6 +164,7 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
                         sx={{
                           mx: 1,
                           position: "relative",
+                          color: "inherit", // Inherit from AppBar
                           "&::after":
                             activeSection === item.href ||
                             (item.items && item.items.some((subItem) => activeSection === subItem.href))
@@ -214,6 +223,7 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
                       sx={{
                         mx: 1,
                         position: "relative",
+                        color: "inherit", // Inherit from AppBar
                         "&::after":
                           activeSection === item.href
                             ? {
@@ -250,8 +260,8 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
         PaperProps={{
           sx: {
             bgcolor: "black",
-            color: "white",
             width: 250,
+            color: "#fff", // Always white in mobile drawer for simplicity
           },
         }}
       >
@@ -262,7 +272,6 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
                 <ListItemButton
                   onClick={() => {
                     toggleDrawer()
-                    // Don't navigate for project scope and downloads
                     if (item.href !== "#project-scope" && item.href !== "#downloads") {
                       handleScroll(item.href)
                     }
@@ -275,7 +284,7 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
                   <ListItemText
                     primary={item.text}
                     sx={{
-                      color: item.hasDropdown || activeSection === item.href ? "#016a70" : "white",
+                      color: item.hasDropdown || activeSection === item.href ? "#016a70" : "inherit",
                       fontWeight: item.hasDropdown || activeSection === item.href ? "bold" : "normal",
                     }}
                   />
@@ -298,7 +307,7 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
                       <ListItemText
                         primary={subItem.text}
                         sx={{
-                          color: activeSection === subItem.href ? "#016a70" : "white",
+                          color: activeSection === subItem.href ? "#016a70" : "inherit",
                           fontWeight: activeSection === subItem.href ? "bold" : "normal",
                         }}
                       />

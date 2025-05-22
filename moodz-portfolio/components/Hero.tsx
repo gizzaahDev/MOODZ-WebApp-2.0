@@ -112,36 +112,22 @@ export default function Hero({ scrollToSection }: HeroProps) {
           flex: { xs: "1 1 100%", md: "1 1 50%" },
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: isMobile ? "flex-end" : "center",
           alignItems: "center",
           textAlign: "center",
           position: "relative",
           zIndex: 1000,
-          p: isMobile ? 0 : 4,
+          p: isMobile ? 2 : 4,
+          pb: isMobile ? 6 : 4,
         }}
       >
-        {isMobile && (
-          <Box sx={{ 
-            width: '100%', 
-            height: '200px', 
-            position: 'relative',
-            mb: 0
-          }}>
-            <SplineScene
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full"
-              fallback={<div />}
-            />
-          </Box>
-        )}
-
         <motion.div 
           initial={{ opacity: 0, y: -50 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.8 }}
           style={{ opacity: isMobile ? 1 - scrollProgress : 1 }}
         >
-          <Typography variant={isMobile ? "h2" : "h1"} component="h1" sx={{ fontWeight: "bold", color: "#00abb4", mb: 0 }}>
+          <Typography variant={isMobile ? "h2" : "h1"} component="h1" sx={{ fontWeight: "bold", color: "#00abb4", mb: 2 }}>
             MOODZ
           </Typography>
         </motion.div>
@@ -152,7 +138,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.3 }}
           style={{ opacity: isMobile ? 1 - scrollProgress : 1 }}
         >
-          <Typography variant={isMobile ? "h5" : "h4"} component="h2" sx={{ mb: 2, color: "white", px: isMobile ? 0 : 0 }}>
+          <Typography variant={isMobile ? "h5" : "h4"} component="h2" sx={{ mb: 4, color: "white", px: isMobile ? 2 : 0 }}>
             Mitigating Depression Through Technology
           </Typography>
         </motion.div>
@@ -164,10 +150,10 @@ export default function Hero({ scrollToSection }: HeroProps) {
           style={{ opacity: isMobile ? 1 - scrollProgress : 1 }}
         >
           <Typography variant="body1" sx={{ 
-            mb: 4, 
+            mb: 6, 
             color: "gray", 
             maxWidth: "600px",
-            px: isMobile ? 0 : 0,
+            px: isMobile ? 2 : 0,
             fontSize: isMobile ? '0.9rem' : '1rem'
           }}>
             MOODZ is a cutting-edge research project focused on developing innovative solutions to identify, classify,

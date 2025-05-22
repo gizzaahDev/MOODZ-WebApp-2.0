@@ -18,6 +18,7 @@ import AboutUs from "../components/AboutUs"
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string | null>(null)
   const sectionRefs = useRef<{ [key: string]: IntersectionObserverEntry | null }>({})
+  const [isNavbarDark, setIsNavbarDark] = useState(false)
 
   const scrollToSection = (elementId: string) => {
     const element = document.querySelector(elementId)
@@ -39,16 +40,20 @@ export default function Home() {
     const observerOptions = {
       root: null,
       rootMargin: "-80px 0px -20% 0px",
-      threshold: 0.1,
+      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
     }
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+    const darkSections = ["#research-problem", "#milestones", "#downloads"]
+
+    const calculateActiveSection = (entries: IntersectionObserverEntry[]) => {
+      // Store section visibility
       entries.forEach((entry) => {
         if (entry.target.id) {
           sectionRefs.current[`#${entry.target.id}`] = entry
         }
       })
 
+      // Find the most visible section
       const visibleSections = Object.entries(sectionRefs.current)
         .filter(([_, entry]) => entry?.isIntersecting)
         .sort((a, b) => {
@@ -58,11 +63,16 @@ export default function Home() {
         })
 
       if (visibleSections.length > 0) {
-        setActiveSection(visibleSections[0][0])
+        const mostVisibleSection = visibleSections[0][0]
+        setActiveSection(mostVisibleSection)
+        // Set navbar text color based on whether the most visible section is in darkSections
+        setIsNavbarDark(darkSections.includes(mostVisibleSection))
+      } else {
+        setIsNavbarDark(false)
       }
     }
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions)
+    const observer = new IntersectionObserver(calculateActiveSection, observerOptions)
 
     const sections = document.querySelectorAll("section, [id]")
     sections.forEach((section) => {
@@ -71,10 +81,20 @@ export default function Home() {
       }
     })
 
+    // Apply or remove .dark-text class based on isNavbarDark
+    const navbar = document.querySelector("nav")
+    if (navbar) {
+      if (isNavbarDark) {
+        navbar.classList.add("dark-text")
+      } else {
+        navbar.classList.remove("dark-text")
+      }
+    }
+
     return () => {
       observer.disconnect()
     }
-  }, [])
+  }, [isNavbarDark])
 
   return (
     <Box sx={{ bgcolor: "#f3faf4", color: "white", minHeight: "100vh", pt: 0 }}>
