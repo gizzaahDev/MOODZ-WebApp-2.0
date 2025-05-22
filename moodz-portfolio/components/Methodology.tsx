@@ -52,14 +52,14 @@ export default function Methodology() {
               <Paper
                 elevation={3}
                 sx={{
-                  p: 4,
+                  p: { xs: 1, md: 4 },
                   backgroundColor: "rgba(255, 255, 255, 0.7)",
                   backdropFilter: "blur(8px)",
                   color: "#444",
                   height: "100%",
                 }}
               >
-                <Typography variant="h5" sx={{ color: "#016a70", mb: 3 }}>
+                <Typography variant="h5" sx={{ color: "#016a70", mb: 3, textAlign: { xs: "center", md: "left" } }}>
                   Research Approach
                 </Typography>
 
@@ -112,8 +112,103 @@ export default function Methodology() {
                   textAlign: "center",
                   backdropFilter: "blur(8px)",
                   backgroundColor: "rgba(255, 255, 255, 0.7)",
-                  p: 2,
+                  p: { xs: 1, md: 4 },
                   borderRadius: 2,
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  const img = new Image();
+                  img.src = "/assets/SystemOverview.png";
+                  const w = window.open("", "_blank");
+                  if (w) {
+                    w.document.write(`
+                      <html>
+                        <head>
+                          <style>
+                            body { margin: 0; overflow: hidden; }
+                            .image-container {
+                              position: fixed;
+                              top: 0;
+                              left: 0;
+                              width: 100vw;
+                              height: 100vh;
+                              background: rgba(0,0,0,0.9);
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                            }
+                            .close-btn {
+                              position: absolute;
+                              top: 20px;
+                              right: 20px;
+                              background: #fff;
+                              border: none;
+                              border-radius: 50%;
+                              width: 40px;
+                              height: 40px;
+                              cursor: pointer;
+                              font-size: 20px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            }
+                            .zoom-controls {
+                              position: absolute;
+                              bottom: 20px;
+                              left: 50%;
+                              transform: translateX(-50%);
+                              display: flex;
+                              gap: 10px;
+                            }
+                            .zoom-btn {
+                              background: #fff;
+                              border: none;
+                              border-radius: 50%;
+                              width: 40px;
+                              height: 40px;
+                              cursor: pointer;
+                              font-size: 20px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            }
+                            img {
+                              max-width: 100%;
+                              max-height: 100%;
+                              transition: transform 0.25s ease;
+                            }
+                          </style>
+                        </head>
+                        <body>
+                          <div class="image-container">
+                            <button class="close-btn" onclick="window.close()">×</button>
+                            <div class="zoom-controls">
+                              <button class="zoom-btn" onclick="zoomIn()">+</button>
+                              <button class="zoom-btn" onclick="zoomOut()">-</button>
+                            </div>
+                            <img src="${img.src}" alt="MOODZ System Architecture Diagram" id="fullscreen-img">
+                          </div>
+                          <script>
+                            let scale = 1;
+                            const img = document.getElementById('fullscreen-img');
+                            
+                            function zoomIn() {
+                              scale += 0.25;
+                              img.style.transform = 'scale(' + scale + ')';
+                            }
+                            
+                            function zoomOut() {
+                              if (scale > 0.25) {
+                                scale -= 0.25;
+                                img.style.transform = 'scale(' + scale + ')';
+                              }
+                            }
+                          </script>
+                        </body>
+                      </html>
+                    `);
+                    w.document.close();
+                  }
                 }}
               >
                 <img

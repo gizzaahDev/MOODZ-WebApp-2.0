@@ -62,19 +62,19 @@ export const Contact2 = ({
               <Typography component="div" variant="body2">
                 <Box component="ul" sx={{ pl: 2 }}>
                   <li>
-                    <span className="font-bold">Phone: </span>
-                    {phone}
+                    <span className="font-bold text-[#444]">Phone: </span>
+                    <span className="text-[#444]">+94785701646</span>
                   </li>
                   <li>
-                    <span className="font-bold">Email: </span>
+                    <span className="font-bold text-[#444]">Email: </span>
                     <a href="mailto:hello.cvlabs@gmail.com" className="underline text-[#444]">
                       hello.cvlabs@gmail.com
                     </a>
                   </li>
                   <li>
-                    <span className="font-bold">Web: </span>
-                    <a href={web.url} target="_blank" className="underline text-[#444]">
-                      {web.label}
+                    <span className="font-bold text-[#444]">Web: </span>
+                    <a href="https://cloudvistalabs.web.app/" target="_blank" className="underline text-[#444]">
+                      cloudvistalabs.com
                     </a>
                   </li>
                 </Box>
@@ -85,10 +85,10 @@ export const Contact2 = ({
             <div className="flex gap-4">
               <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="firstName" className="text-[#444]">First Name</Label>
-                <Input 
-                  type="text" 
-                  id="firstName" 
-                  placeholder="First Name" 
+                <Input
+                  type="text"
+                  id="firstName"
+                  placeholder="First Name"
                   className="text-[#444]"
                   value={formData.firstName}
                   onChange={handleInputChange}
@@ -96,23 +96,23 @@ export const Contact2 = ({
               </div>
               <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="lastName" className="text-[#444]">Last Name</Label>
-                <Input 
-                  type="text" 
-                  id="lastName" 
-                  placeholder="Last Name" 
+                <Input
+                  type="text"
+                  id="lastName"
+                  placeholder="Last Name"
                   className="text-[#444]"
                   value={formData.lastName}
                   onChange={handleInputChange}
                 />
               </div>
             </div>
-            
+
             <div className="grid w-full items-center gap-1.5">
               <Label htmlFor="subject" className="text-[#444]">Subject</Label>
-              <Input 
-                type="text" 
-                id="subject" 
-                placeholder="Subject" 
+              <Input
+                type="text"
+                id="subject"
+                placeholder="Subject"
                 className="text-[#444]"
                 value={formData.subject}
                 onChange={handleInputChange}
@@ -120,15 +120,15 @@ export const Contact2 = ({
             </div>
             <div className="grid w-full gap-1.5">
               <Label htmlFor="message" className="text-[#444]">Message</Label>
-              <Textarea 
-                placeholder="Type your message here." 
-                id="message" 
+              <Textarea
+                placeholder="Type your message here."
+                id="message"
                 className="text-[#444]"
                 value={formData.message}
                 onChange={handleInputChange}
               />
             </div>
-            <Button 
+            <Button
               className="w-full text-[#fff]"
               onClick={handleSubmit}
             >

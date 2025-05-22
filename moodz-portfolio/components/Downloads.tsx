@@ -15,32 +15,32 @@ const documents = [
     title: "Topic Assessment",
     date: "2024/07/24",
     type: "Group",
-    file: "/assets/pdfDoc/TAF_24-25J-253.pdf"
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FTAF_24-25J-253.pdf?alt=media&token=807d38bc-9cd4-4227-bef4-8b9ec63d31ea"
   },
   
   {
     title: "Project Proposal",
     date: "2024/08/13",
     type: "Group",
-    file: "/assets.pdfDoc/Proposal Presentation I - MOODZ.pdf",
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2F24-25J-253_IT21360282%20Proposal%20Report.pdf?alt=media&token=df740ffc-3652-4a3a-baa0-5b7f56550bf3",
   },
   {
     title: "Progress Presentation I",
     date: "2024/12/05",
     type: "Group",
-    file: "/assets/pdfDoc/Proposal Presentation I - MOODZ.pdf"
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FProposal%20Presentation%20I%20-%20MOODZ.pdf?alt=media&token=28e163a9-5960-4d26-abdb-cb117545160f"
   },
   {
     title: "Progress Presentation II",
     date: "2025/03/19",
     type: "Group",
-    file: "/assets/pdfDoc/Progrss_Presentation_2_-_MOODZ.pdf"
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FProgrss_Presentation_2_-_MOODZ.pdf?alt=media&token=bd0edf52-3e3b-4c7d-ae3e-4adf327a193d"
   },
   {
     title: "Research Paper",
     date: "2025/04/25",
     type: "Group",
-    file: "/assets/pdfDoc/MOODZ_research_paper.pdf"
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FMOODZ_research_paper.pdf?alt=media&token=6bcd2462-4a70-442d-bea0-aa7bd70fb4f8"
   },
   {
     title: "Individual Final Reports",
@@ -48,23 +48,23 @@ const documents = [
     type: "Individual",
     file: null,
     members: [
-        { name: "Member 1", file: "/assets/pdfDoc/Tennakoon T.M.Y.N_Final report.pdf" },
-        { name: "Member 2", file: "/assets/pdfDoc/Jayathilaka D.V.G_Final report.pdf" },
-        { name: "Member 3", file: "/assets/pdfDoc/Thisera K.G_Final report.pdf" },
-        { name: "Member 3", file: "/assets/pdfDoc/Sandumina B.N_Final report.pdf" }
+        { name: "Member 1", file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FTennakoon%20T.M.Y.N_Final%20report.pdf?alt=media&token=3917cb2e-acc5-499a-bc2f-ab341e1be017" },
+        { name: "Member 2", file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FJayathilaka%20D.V.G_Final%20report.pdf?alt=media&token=27c5da20-2027-432a-9368-7b9a9168a994" },
+        { name: "Member 3", file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FThisera%20K.G_Final%20report.pdf?alt=media&token=e8ee36b6-256e-48db-bd97-a059b6bf23ad" },
+        { name: "Member 3", file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FSandumina%20B.N_Final%20report.pdf?alt=media&token=1b65051f-cf19-4535-8ed1-e46d2fba0ba9" }
       ]
   },
   {
     title: "Final Report",
     date: "2025/04/10",
     type: "Group",
-    file: "/assets/pdfDoc/24_25J_253_Group_Final_Report.pdf"
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2F24_25J_253_Group_Final_Report.pdf?alt=media&token=4b153f40-eba3-4b71-bdeb-8c6b6d1b5e0b"
   },
   {
     title: "Poster",
     date: "2025/04/03",
     type: "Group",
-    file: "/assets/pdfDoc/Post.png",
+    file: "/assets/Post.png",
     icon: "/assets/image.png"
   }
 ]
@@ -74,19 +74,19 @@ const presentations = [
     title: "Project Proposal",
     date: "2024/08/13",
     type: "Group",
-    file: "/assets/powerPDoc/ProposalPresentation-MOODZ.pptx"
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FProposal%20Presentation%20-%20MOODZ.pptx?alt=media&token=d052fe3f-373c-4cbe-8069-60314b554d71"
   },
   {
     title: "Progress Presentation I",
     date: "2024/12/05",
     type: "Group",
-    file: "/assets/powerPDoc/Progress_Presentation(PP1).pptx"
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2F24-25J-253_Progress_Presentation(PP1).pptx?alt=media&token=4c42a8e1-d39f-4195-8dfa-98265108212c"
   },
   {
     title: "Progress Presentation II",
     date: "2025/03/19",
     type: "Group",
-    file: "/assets/powerPDoc/ProgrssPresentation 2-MOODZ.pptx"
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FProgrssPresentation%202-MOODZ.pptx?alt=media&token=35dbaa42-eaad-40c5-a4fe-4737c34dc025"
   },
   {
     title: "Final Presentation",
@@ -302,7 +302,8 @@ export default function Downloads() {
                                   sx={{ color: "#016a70", borderColor: "#016a70" }}
                                   component="a"
                                   href={doc.file}
-                                  download
+                                  target="_blank"
+                                  rel="noopener noreferrer"
                                 >
                                   Download
                                 </Button>
@@ -350,7 +351,8 @@ export default function Downloads() {
                                         }}
                                         component="a"
                                         href={member.file}
-                                        download
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         {member.name}
                                       </Button>
@@ -422,7 +424,8 @@ export default function Downloads() {
                                 sx={{ color: "#016a70", borderColor: "#016a70" }}
                                 component="a"
                                 href={pres.file}
-                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
                               >
                                 Download
                               </Button>

@@ -77,10 +77,10 @@ export default function Home() {
   }, [])
 
   return (
-    <Box sx={{ bgcolor: "#f3faf4", color: "white", minHeight: "100vh" }}>
+    <Box sx={{ bgcolor: "#f3faf4", color: "white", minHeight: "100vh", pt: 0 }}>
       <SectionCursor />
-      <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
       <Hero scrollToSection={scrollToSection} />
+      <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
       <ProjectScope />
       <ResearchProblem />
       <ResearchObjectives />

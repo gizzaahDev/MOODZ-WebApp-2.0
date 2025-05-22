@@ -106,8 +106,12 @@ export default function Navbar({ activeSection, scrollToSection: propScrollToSec
             backgroundColor: "rgba(243, 250, 244, 0.5)",
             color: "#444",
           },
+          "&.hero": {
+            backgroundColor: "rgba(243, 250, 244, 0.5)",
+            color: "#444",
+          },
         }}
-        className={activeSection !== "#home" ? "scrolled" : ""}
+        className={activeSection !== "#home" ? "scrolled" : "hero"}
       >
         <Toolbar>
           <Typography

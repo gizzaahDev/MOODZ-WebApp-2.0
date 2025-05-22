@@ -40,7 +40,7 @@ export default function ResearchProblem() {
 
           <Box id="proposed-problem" sx={{ mb: 10 }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <Typography variant="h4" component="h3" sx={{ mb: 4, color: "#00abb4" }}>
+              <Typography variant="h4" component="h3" sx={{ mb: 4, color: "#00abb4", textAlign: { xs: 'center', md: 'left' } }}>
                 Proposed Problem
               </Typography>
 
@@ -48,7 +48,7 @@ export default function ResearchProblem() {
                 <Paper
                   elevation={3}
                   sx={{
-                    p: 4,
+                    p: { xs: 1, md: 4 },
                     bgcolor: "rgba(17,17,17,0.9)",
                     color: "white",
                     mb: 4,
@@ -76,14 +76,14 @@ export default function ResearchProblem() {
 
           <Box id="proposed-solution">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <Typography variant="h4" component="h3" sx={{ mb: 4, color: "#00abb4" }}>
+              <Typography variant="h4" component="h3" sx={{ mb: 4, color: "#00abb4", textAlign: { xs: 'center', md: 'left' } }}>
                 Proposed Solution
               </Typography>
 
               <Paper
                 elevation={3}
                 sx={{
-                  p: 4,
+                  p: { xs: 1, md: 4 },
                   bgcolor: "rgba(17,17,17,0.2)",
                   color: "white",
                   mb: 4,
@@ -119,17 +119,20 @@ export default function ResearchProblem() {
                     autoPlay
                     loop
                     muted
+                    playsInline
                     style={{
                       position: "absolute",
                       top: 0,
                       left: 0,
                       width: "100%",
                       height: "100%",
-                      
                       borderRadius: 0,
                     }}
                   >
-                    <source src="/assets/video/MOODZ.mp4" type="video/mp4" />
+                    <source 
+                      src="https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FMOODZ.mp4?alt=media&token=7364a067-2357-48ff-92a4-f6ca7f7bc649" 
+                      type="video/mp4" 
+                    />
                     Your browser does not support the video tag.
                   </video>
                 </Box>

@@ -14,20 +14,28 @@ export default function ProjectScope() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Container maxWidth="lg" sx={{ py: 10 }} id="project-scope">
+    <Container maxWidth="lg" sx={{ 
+      py: 10,
+      px: { xs: 0, md: '24px' }
+    }} id="project-scope">
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-        <Typography variant="h6" component="h2" sx={{ mb: 0, color: "#000", textAlign: "left" }}>
+        <Typography variant="h6" component="h2" sx={{ mb: 0, color: "#000", textAlign: { xs: "center", md: "left" } }}>
           Project Scope
         </Typography>
       </motion.div>
 
       <Box id="literature-survey" sx={{ mb: 10 }}>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-          <Typography variant="h4" component="h3" sx={{ mb: 4, color: "#016a70" }}>
+          <Typography variant="h4" component="h3" sx={{ mb: 4, color: "#016a70", textAlign: { xs: "center", md: "left" } }}>
             Literature Survey
           </Typography>
 
-          <Paper elevation={4} sx={{ p: 4, bgcolor: "#fff", color: "#444" }}>
+          <Paper elevation={4} sx={{ 
+            p: { xs: 2, md: 4 },
+            bgcolor: "#fff", 
+            color: "#444",
+            mx: { xs: 0, md: 'auto' }
+          }}>
             <Box sx={{ 
               display: 'flex', 
               flexDirection: isMobile ? 'column' : 'row', 
@@ -92,12 +100,20 @@ export default function ProjectScope() {
 
       <Box id="research-gap" sx={{ mb: 10 }}>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-          <Typography variant="h4" component="h3" sx={{ mb: 4, color: "#444", fontWeight: "bold" }}>
+          <Typography variant="h4" component="h3" sx={{ 
+            mb: 4, 
+            color: "#444", 
+            fontWeight: "bold",
+            textAlign: { xs: 'center', md: 'left' }
+          }}>
             Research Gap
           </Typography>
 
           <Box>
-            <Typography variant="body1" paragraph sx={{ color: "#000" }}>
+            <Typography variant="body1" paragraph sx={{ 
+              color: "#000",
+              textAlign: { xs: 'center', md: 'left' }
+            }}>
               Despite significant advances in mental health technology, several critical gaps remain:
             </Typography>
             <Grid container spacing={3}>

@@ -17,6 +17,7 @@ const technologies = [
   { name: "Google Cloud Run", icon: <SiGooglecloud size={40} /> },
   { name: "Gradient Boosting", icon: <SiScikitlearn size={40} /> },
   { name: "YOLO", icon: <SiPytorch size={40} /> },
+  { name: "Random Forest", icon: <SiScikitlearn size={40} /> },
   { name: "Python", icon: <SiPython size={40} /> },
   { name: "JavaScript", icon: <SiJavascript size={40} /> },
   { name: "Docker", icon: <SiDocker size={40} /> },

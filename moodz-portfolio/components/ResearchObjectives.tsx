@@ -18,7 +18,7 @@ export default function ResearchObjectives() {
           Research Objectives
         </Typography>
 
-        <Paper elevation={4} sx={{ p: 4, bgcolor: "#fff", color: "#444", borderRadius: 3 }}>
+        <Paper elevation={4} sx={{ p: { xs: 1, md: 4 }, bgcolor: "#fff", color: "#444", borderRadius: 3 }}>
           <Typography variant="body1" paragraph sx={{ textAlign: "center", mb: 4 }}>
             Our research is guided by a cohesive framework to develop innovative solutions for depression detection and management.
           </Typography>
@@ -61,7 +61,7 @@ export default function ResearchObjectives() {
                 </Card>
               </Box>
             </motion.div>
-            <Box sx={{ position: "relative", maxWidth: "800px", mx: "auto", bgcolor: "#fff", p: 4, minHeight: "600px" }}>
+            <Box sx={{ position: "relative", maxWidth: "800px", mx: "auto", bgcolor: "#fff", p: { xs: 0, md: 4 }, minHeight: "600px" }}>
               <Box
                 sx={{
                   position: "absolute",
@@ -143,6 +143,7 @@ export default function ResearchObjectives() {
                       zIndex: 1,
                       minHeight: "100px",
                       width: "100%",
+                      px: { xs: 0, md: 2 }
                     }}
                   >
                     <Box
@@ -166,13 +167,14 @@ export default function ResearchObjectives() {
                     <Paper
                       sx={{
                         flex: 1,
-                        p: 3,
+                        p: { xs: 1, md: 3 },
                         bgcolor: "#f5f5f5",
                         color: "#333",
                         borderRadius: 2,
                         boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
                         maxWidth: "500px",
                         textAlign: { xs: "center", sm: isLeft ? "left" : "right" },
+                        mx: { xs: 0, md: 2 }
                       }}
                     >
                       <Typography variant="h6" sx={{ color: "#016a70", mb: 1, fontWeight: "medium" }}>
