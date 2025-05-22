@@ -119,6 +119,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
           zIndex: 1000,
           p: isMobile ? 2 : 4,
           pb: isMobile ? 6 : 4,
+          mb: isMobile ? 10 : 4,
         }}
       >
         <motion.div 
