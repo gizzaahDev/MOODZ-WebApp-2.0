@@ -4,8 +4,8 @@ import { Metadata } from "next";
 import ClientWrapper from "./ClientWrapper";
 
 export const metadata: Metadata = {
-  title: 'Welcome To MOOZ',
-  description: 'A comprehensive web application developed through extensive research to help reduce human depression and improve mental well-being. MOOZ provides detailed insights and tools for emotional management and mental health support.',
+  title: 'Welcome To MOODZ',
+  description: 'A comprehensive web application developed through extensive research to help reduce human depression and improve mental well-being. MOODZ provides detailed insights and tools for emotional management and mental health support.',
   icons: {
     icon: '/assets/MOODSLogo.png',
   },
