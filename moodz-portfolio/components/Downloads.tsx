@@ -21,8 +21,14 @@ const documents = [
   {
     title: "Project Proposal",
     date: "2024/08/13",
-    type: "Group",
-    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2F24-25J-253_IT21360282%20Proposal%20Report.pdf?alt=media&token=df740ffc-3652-4a3a-baa0-5b7f56550bf3",
+    type: "Individual",
+    file: null,
+    members: [
+        { name: "Member 1", file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FYoshitha_ppr24-25J-253_IT21358098.pdf?alt=media&token=c534a9ac-5f54-4d41-a1b5-6a09527ac0d9" },
+        { name: "Member 2", file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2F24-25J-253_IT21360282%20Proposal%20Report.pdf?alt=media&token=df740ffc-3652-4a3a-baa0-5b7f56550bf3" },
+        { name: "Member 3", file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FThisera_ppr24-25J-253_IT21204166.pdf?alt=media&token=9949336d-ffd0-4be5-acb5-3652f617186f" },
+        { name: "Member 3", file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FNethma_ppr24-25J-253_IT21282454.pdf?alt=media&token=1244d7ec-7beb-4436-870e-b9210ed3f7bc" }
+      ]
   },
   {
     title: "Progress Presentation I",
@@ -90,9 +96,9 @@ const presentations = [
   },
   {
     title: "Final Presentation",
-    date: "Yet to be submitted",
+    date: "28/05/2025",
     type: "Group",
-    file: null
+    file: "https://firebasestorage.googleapis.com/v0/b/testdb-8ea15.firebasestorage.app/o/Moodz%20Web%2FFinal_Presentation_-_MOODZ.pdf?alt=media&token=a040b758-6847-44ce-bcac-c323a4ad41d0"
   }
 ]
 
