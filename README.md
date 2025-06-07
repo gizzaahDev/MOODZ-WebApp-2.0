@@ -36,10 +36,7 @@ The application includes the following sections:
    npm install
 
 > **⚠️ If any errors occur during installation, you can force install using:**
-> 
-> ```bash
 > npm install --force
-> ```
 
 3. Start the Development Server
    npm run dev
