@@ -7,7 +7,7 @@ This is a web application built using **Next.js** for managing and showcasing al
 ## 🧠 Features
 
 The application includes the following sections:
-
+- **Home
 - **Literature Survey**
 - **Research Gap**
 - **Research Problem & Solution**
@@ -23,10 +23,6 @@ The application includes the following sections:
 ## 🚀 Technologies Used
 
 - [Next.js](https://nextjs.org/)
-- React.js
-- HTML/CSS
-- JavaScript
-- Node.js
 
 ## 📁 Project Setup
 
@@ -36,11 +32,11 @@ The application includes the following sections:
 1.git clone https://github.com/gizzaahDev/MOODZ-WebApp-2.0.git
   cd moodz-portfolio
 
-##2.Install Dependencies
+2.Install Dependencies
   npm install
-###If any errors occur during installation, you can force install using:
+--If any errors occur during installation, you can force install using:
   npm install --force
 
-##3.Start the Development Server
+3.Start the Development Server
   npm run dev
 
