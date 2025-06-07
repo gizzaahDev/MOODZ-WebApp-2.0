@@ -29,14 +29,19 @@ The application includes the following sections:
 ### 1. Clone the Repository
 
 ```bash
-1.git clone https://github.com/gizzaahDev/MOODZ-WebApp-2.0.git
-  cd moodz-portfolio
+1. git clone https://github.com/gizzaahDev/MOODZ-WebApp-2.0.git
+   cd moodz-portfolio
 
-2.Install Dependencies
-  npm install
---If any errors occur during installation, you can force install using:
-  npm install --force
+2. Install Dependencies
+   npm install
 
-3.Start the Development Server
-  npm run dev
+> **⚠️ If any errors occur during installation, you can force install using:**
+> 
+> ```bash
+> npm install --force
+> ```
+
+3. Start the Development Server
+   npm run dev
+
 
